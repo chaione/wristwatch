@@ -6,7 +6,6 @@ module Wristwatch
     end
 
     def add_task(name, *args, &blk)
-      raise ArgumentError, "Wristwatch manifests require that you pass a block to be executed" unless block_given?
       self[name] = [] unless has_key?(name)
       self[name] << build_task(*args, &blk)
     end
