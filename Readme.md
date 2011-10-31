@@ -21,6 +21,7 @@ and Wristwatch does the rest:
     end
 
 Wristwatch gives you lots of basic intervals to play with:
+
 * hourly
 * bi-hourly
 * quarter-hourly
@@ -33,9 +34,17 @@ Wristwatch gives you lots of basic intervals to play with:
 and so on. See intervals.rb for details, and re-open it to add your own
 task triggers.
 
+Wristwatch will add a cron.rake task if you're using Rails, which should make it
+easy to plug in to Heroku's hourly cron. 
+
+Warnings
+--------
+Wristwatch relies on hourly resolution, so daily cron probably won't 
+trigger the :daily task. For best results, run cron.rake hourly.
+
 Future
 ------
-Full configuration, logging and more. Stay tuned!
+Full configuration, logging, increased resolution and more. Stay tuned!
 
 Copyright
 ---------
