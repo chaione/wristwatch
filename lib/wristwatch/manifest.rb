@@ -6,7 +6,7 @@ module Wristwatch
     end
 
     def add_task(name, *args, &blk)
-      self[name] = [] unless has_key?(name)
+      self[name] = [] unless self[name].respond_to?(:<<)
       self[name] << build_task(*args, &blk)
     end
 
