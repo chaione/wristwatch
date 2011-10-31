@@ -3,6 +3,7 @@ module Wristwatch
 
     def build
       instance_eval instructions
+      self
     end
 
     def add_task(name, *args, &blk)
